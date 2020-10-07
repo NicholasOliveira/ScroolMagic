@@ -88,7 +88,8 @@
 						<section class="panel animate__animated init"
 							style="display: flex; justify-content: center; align-items: center; background-color: #fff; z-index: 1;">
 
-							<div style="width: 100%; height: 90vh; background-size: contain; background-position: center;">
+							<div
+								style="width: 100%; height: 90vh; background-size: contain; background-position: center; background-repeat: no-repeat;">
 
 							</div>
 
@@ -128,45 +129,30 @@
 
 								.fromTo("section.panel.init div", 1, { backgroundImage: "url(./fotos/foto_1.png)", opacity: 1, backgroundSize: "100%" }, { backgroundImage: "url(./fotos/foto_1.png)", backgroundSize: "contain", opacity: 1, ease: Linear.easeNone }) // in from top
 
-								.fromTo("section.panel.turqoise", 1, { x: "60%", color: "rgba(255,255,255,0)" }, { x: "40%", color: "#53cffc", ease: Linear.easeNone })
+								.fromTo("section.panel.init div", 1, { backgroundImage: "url(./fotos/foto_2.png)", opacity: 1 }, { backgroundImage: "url(./fotos/foto_2.png)", backgroundSize: "contain", opacity: 1, ease: Linear.easeNone }) // in from top
 
-								.fromTo("section.panel.init div", 1, { backgroundImage: "url(./fotos/foto_2.png)", opacity: 0 }, { backgroundImage: "url(./fotos/foto_2.png)", opacity: 1, ease: Linear.easeNone }) // in from top
+								.fromTo("section.panel.turqoise", 1, { x: "60%", color: "rgba(255,255,255,0)" }, { x: "40%", color: "#53cffc", ease: Linear.easeNone })
 
 								.fromTo("section.panel.turqoise", 1, { x: "40%", color: "#53cffc" }, { x: "20%", color: "#53cffc", ease: Linear.easeNone })
 
-								.fromTo("section.panel.init div", 1, { backgroundImage: "url(./fotos/foto_2.png)", opacity: 1 }, { backgroundImage: "url(./fotos/foto_2.png)", opacity: 0, ease: Linear.easeNone }) // in from top
-
-
 								.fromTo("section.panel.turqoise", 1, { x: "20%", color: "#53cffc" }, { x: "0%", color: "#53cffc", ease: Linear.easeNone })
 
-								.fromTo("section.panel.init div", 1, { backgroundImage: "url(./fotos/foto_3.png)", opacity: 0 }, { backgroundImage: "url(./fotos/foto_3.png)", opacity: 1, ease: Linear.easeNone }) // in from top
+								.fromTo("section.panel.init div", 1, { backgroundImage: "url(./fotos/foto_3.png)", opacity: 1 }, { backgroundImage: "url(./fotos/foto_3.png)", opacity: 1, ease: Linear.easeNone }) // in from top
 
 
-								.fromTo("section.panel.turqoise", 1, { x: "0%", color: "#53cffc" }, { x: "-20%", color: "#53cffc", ease: Linear.easeNone })
+								.fromTo("section.panel.turqoise", 1, { x: "0%", color: "#53cffc" }, { x: "-40%", color: "#53cffc", ease: Linear.easeNone })
 
-								.fromTo("section.panel.init div", 1, { backgroundImage: "url(./fotos/foto_3.png)", opacity: 1 }, { backgroundImage: "url(./fotos/foto_3.png)", opacity: 0, ease: Linear.easeNone }) // in from top
 
-								.fromTo("section.panel.turqoise", 1, { x: "-20%", color: "#53cffc" }, { x: "-40%", color: "#53cffc", ease: Linear.easeNone })
-
-								.fromTo("section.panel.init div", 1, { backgroundImage: "url(./fotos/foto_4.png)", opacity: 0 }, { backgroundImage: "url(./fotos/foto_4.png)", opacity: 1, ease: Linear.easeNone }) // in from top
+								.fromTo("section.panel.init div", 1, { backgroundImage: "url(./fotos/foto_4.png)", opacity: 1 }, { backgroundImage: "url(./fotos/foto_4.png)", opacity: 1, ease: Linear.easeNone }) // in from top
 
 								.fromTo("section.panel.turqoise", 1, { x: "-40%", color: "#53cffc" }, { x: "-60%", color: "#53cffc", ease: Linear.easeNone })
 
-								.fromTo("section.panel.init div", 1, { backgroundImage: "url(./fotos/foto_4.png)", opacity: 1 }, { backgroundImage: "url(./fotos/foto_4.png)", opacity: 0, ease: Linear.easeNone }) // in from top
+								.fromTo("section.panel.init div", 1, { backgroundImage: "url(./fotos/foto_5.png)", opacity: 1 }, { backgroundImage: "url(./fotos/foto_5.png)", opacity: 1, ease: Linear.easeNone }) // in from top
 
-								.fromTo("section.panel.turqoise", 1, { x: "-60%", color: "#53cffc" }, { x: "-80%", color: "#53cffc", ease: Linear.easeNone })
-
-								.fromTo("section.panel.init div", 1, { backgroundImage: "url(./fotos/foto_5.png)", opacity: 0 }, { backgroundImage: "url(./fotos/foto_5.png)", opacity: 1, ease: Linear.easeNone }) // in from top
 
 								.fromTo("section.panel.turqoise", 1, { x: "-80%", color: "#53cffc" }, { x: "-100%", color: "#53cffc", ease: Linear.easeNone })
 
-								.fromTo("section.panel.init div", 1, { backgroundImage: "url(./fotos/foto_5.png)", opacity: 1 }, { backgroundImage: "url(./fotos/foto_5.png)", opacity: 0, ease: Linear.easeNone }) // in from top
-
-								.fromTo("section.panel.turqoise", 1, { x: "-100%", color: "#53cffc" }, { x: "-110%", color: "#53cffc", ease: Linear.easeNone })
-
 								.fromTo("section.panel.greeenn div", 1, { backgroundImage: "url(./fotos/foto_6.png)", opacity: 0, rotationY: 180 }, { backgroundImage: "url(./fotos/foto_6.png)", opacity: 1, rotationY: 0, ease: Linear.easeNone }) // in from top
-
-								.fromTo("section.panel.turqoise", 1, { x: "-110%", color: "#53cffc" }, { x: "-120%", color: "#53cffc", ease: Linear.easeNone })
 
 							// in from left
 
@@ -174,7 +160,7 @@
 							new ScrollMagic.Scene({
 								triggerElement: "#pinContainer",
 								triggerHook: "onLeave",
-								duration: "400%"
+								duration: "300%"
 							})
 								.setTween("section.panel.turqoise", {})
 								.setPin("#pinContainer")
