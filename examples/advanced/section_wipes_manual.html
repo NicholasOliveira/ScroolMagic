@@ -20,6 +20,7 @@
 	<script type="text/javascript" src="../../scrollmagic/uncompressed/ScrollMagic.js"></script>
 	<script type="text/javascript" src="../../scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
 	<script type="text/javascript" src="../../scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body>
@@ -38,29 +39,79 @@
 						}
 
 						.panel {
-							height: 400px;
+							height: 100%;
 							width: 100%;
 							position: absolute;
 						}
-					</style>
-					<div id="pinContainer">
-						<section class="panel init" style="display: flex; justify-content: center; align-items: center;">
 
-							<div
-								style="width: 500px; height: 300px; background-image: url(https://media.timeout.com/images/105476264/image.jpg); background-size: cover; border-radius: 20px;">
+						@font-face {
+							font-family: 'AzulHelveticaNeue';
+							font-weight: 200;
+							font-style: normal;
+							src: url("./fotos/HelveticaNeueLTStd-Th.woff") format("woff");
+						}
+
+						@font-face {
+							font-family: 'AzulHelveticaNeue';
+							font-weight: 300;
+							font-style: normal;
+							src: url("./fotos/HelveticaNeueLTStd-Lt.woff") format("woff");
+						}
+
+						@font-face {
+							font-family: 'AzulHelveticaNeue';
+							font-weight: 400;
+							font-style: normal;
+							src: url("./fotos/Helvetica.woff") format("woff");
+						}
+
+						@font-face {
+							font-family: 'AzulHelveticaNeue';
+							font-weight: 500;
+							font-style: normal;
+							src: url("./fotos/HelveticaNeueLTStd-Bd.woff") format("woff");
+						}
+
+						/* line 26, C:/Users/Fabio/Documents/projetos/tudo-azul-site/dev/styles/sass/_typography.scss */
+						body {
+							font-family: 'AzulHelveticaNeue', 'Helvetica Neue', Helvetica, sans-serif !important;
+							font-size: 16px;
+							line-height: 1;
+							color: #606060;
+							letter-spacing: 0.25px;
+						}
+					</style>
+
+					<div id="pinContainer">
+
+
+						<section class="panel animate__animated init"
+							style="display: flex; justify-content: center; align-items: center; background-color: #fff; z-index: 1;">
+
+							<div style="width: 100%; height: 90vh; background-size: contain; background-position: center;">
+
 							</div>
 
 						</section>
-						<section class="panel turqoise" style="background-color: rgba(255,255,255,0);">
-							<div style="font-size: 300px; font-weight: bold;">Infinite</div>
-						</section>
-						<section class="panel greenn" style="display: flex; justify-content: center; align-items: center;">
+
+						<section class="panel turqoise"
+							style="background-color: rgba(255,255,255,0); display: flex; justify-content: center; align-items: center; z-index: 2;">
 							<div
-								style="width: 350px; height: 500px; background-image: url(https://media.timeout.com/images/105476264/image.jpg); background-size: cover; border-radius: 20px;">
+								style="font-size: 400px; font-weight: bold; font-family: 'AzulHelveticaNeue', sans-serif; letter-spacing: -30px;">
+								Infinite
+							</div>
+						</section>
+
+						<section class="panel greeenn"
+							style="display: flex; justify-content: center; align-items: center; z-index: 1;">
+							<div class="animate__animated"
+								style="width: 100%; height: 90vh; background-size: contain; background-position: center;">
+
 							</div>
 						</section>
 
 					</div>
+
 					<script>
 						$(function () { // wait for document ready
 							// init
@@ -69,20 +120,65 @@
 							// define movement of panels
 							var wipeAnimation = new TimelineMax()
 
+								.fromTo("section.panel.init div", 1, { backgroundImage: "url(./fotos/foto_1.png)", opacity: 1, backgroundSize: "200%" }, { backgroundImage: "url(./fotos/foto_1.png)", backgroundSize: "200%", opacity: 1, ease: Linear.easeNone }) // in from top
 
-								.fromTo("section.panel.init", 1, { opacity: "0" }, { opacity: "1", ease: Linear.easeNone }) // in from top
-								.fromTo("section.panel.turqoise", 1, { x: "50%", color: "white" }, { x: "-100%", color: "#53cffc", ease: Linear.easeNone })  // in from left
-								.fromTo("section.panel.init", 1, { opacity: "1" }, { opacity: "0" })
-								.fromTo("section.panel.greenn", 1, { x: "100%" }, { x: "0%", ease: Linear.easeNone });  // in from right
+								.fromTo("section.panel.init div", 1, { backgroundImage: "url(./fotos/foto_1.png)", opacity: 1, backgroundSize: "200%" }, { backgroundImage: "url(./fotos/foto_1.png)", backgroundSize: "150%", opacity: 1, ease: Linear.easeNone }) // in from top
+
+								.fromTo("section.panel.init div", 1, { backgroundImage: "url(./fotos/foto_1.png)", opacity: 1, backgroundSize: "150%" }, { backgroundImage: "url(./fotos/foto_1.png)", backgroundSize: "100%", opacity: 1, ease: Linear.easeNone }) // in from top
+
+								.fromTo("section.panel.init div", 1, { backgroundImage: "url(./fotos/foto_1.png)", opacity: 1, backgroundSize: "100%" }, { backgroundImage: "url(./fotos/foto_1.png)", backgroundSize: "contain", opacity: 1, ease: Linear.easeNone }) // in from top
+
+								.fromTo("section.panel.turqoise", 1, { x: "60%", color: "rgba(255,255,255,0)" }, { x: "40%", color: "#53cffc", ease: Linear.easeNone })
+
+								.fromTo("section.panel.init div", 1, { backgroundImage: "url(./fotos/foto_2.png)", opacity: 0 }, { backgroundImage: "url(./fotos/foto_2.png)", opacity: 1, ease: Linear.easeNone }) // in from top
+
+								.fromTo("section.panel.turqoise", 1, { x: "40%", color: "#53cffc" }, { x: "20%", color: "#53cffc", ease: Linear.easeNone })
+
+								.fromTo("section.panel.init div", 1, { backgroundImage: "url(./fotos/foto_2.png)", opacity: 1 }, { backgroundImage: "url(./fotos/foto_2.png)", opacity: 0, ease: Linear.easeNone }) // in from top
+
+
+								.fromTo("section.panel.turqoise", 1, { x: "20%", color: "#53cffc" }, { x: "0%", color: "#53cffc", ease: Linear.easeNone })
+
+								.fromTo("section.panel.init div", 1, { backgroundImage: "url(./fotos/foto_3.png)", opacity: 0 }, { backgroundImage: "url(./fotos/foto_3.png)", opacity: 1, ease: Linear.easeNone }) // in from top
+
+
+								.fromTo("section.panel.turqoise", 1, { x: "0%", color: "#53cffc" }, { x: "-20%", color: "#53cffc", ease: Linear.easeNone })
+
+								.fromTo("section.panel.init div", 1, { backgroundImage: "url(./fotos/foto_3.png)", opacity: 1 }, { backgroundImage: "url(./fotos/foto_3.png)", opacity: 0, ease: Linear.easeNone }) // in from top
+
+								.fromTo("section.panel.turqoise", 1, { x: "-20%", color: "#53cffc" }, { x: "-40%", color: "#53cffc", ease: Linear.easeNone })
+
+								.fromTo("section.panel.init div", 1, { backgroundImage: "url(./fotos/foto_4.png)", opacity: 0 }, { backgroundImage: "url(./fotos/foto_4.png)", opacity: 1, ease: Linear.easeNone }) // in from top
+
+								.fromTo("section.panel.turqoise", 1, { x: "-40%", color: "#53cffc" }, { x: "-60%", color: "#53cffc", ease: Linear.easeNone })
+
+								.fromTo("section.panel.init div", 1, { backgroundImage: "url(./fotos/foto_4.png)", opacity: 1 }, { backgroundImage: "url(./fotos/foto_4.png)", opacity: 0, ease: Linear.easeNone }) // in from top
+
+								.fromTo("section.panel.turqoise", 1, { x: "-60%", color: "#53cffc" }, { x: "-80%", color: "#53cffc", ease: Linear.easeNone })
+
+								.fromTo("section.panel.init div", 1, { backgroundImage: "url(./fotos/foto_5.png)", opacity: 0 }, { backgroundImage: "url(./fotos/foto_5.png)", opacity: 1, ease: Linear.easeNone }) // in from top
+
+								.fromTo("section.panel.turqoise", 1, { x: "-80%", color: "#53cffc" }, { x: "-100%", color: "#53cffc", ease: Linear.easeNone })
+
+								.fromTo("section.panel.init div", 1, { backgroundImage: "url(./fotos/foto_5.png)", opacity: 1 }, { backgroundImage: "url(./fotos/foto_5.png)", opacity: 0, ease: Linear.easeNone }) // in from top
+
+								.fromTo("section.panel.turqoise", 1, { x: "-100%", color: "#53cffc" }, { x: "-110%", color: "#53cffc", ease: Linear.easeNone })
+
+								.fromTo("section.panel.greeenn div", 1, { backgroundImage: "url(./fotos/foto_6.png)", opacity: 0, rotationY: 180 }, { backgroundImage: "url(./fotos/foto_6.png)", opacity: 1, rotationY: 0, ease: Linear.easeNone }) // in from top
+
+								.fromTo("section.panel.turqoise", 1, { x: "-110%", color: "#53cffc" }, { x: "-120%", color: "#53cffc", ease: Linear.easeNone })
+
+							// in from left
 
 							// create scene to pin and link animation
 							new ScrollMagic.Scene({
 								triggerElement: "#pinContainer",
 								triggerHook: "onLeave",
-								duration: "300%"
+								duration: "400%"
 							})
-								.setTween("section.panel.turqoise", { backgroundColor: "blue", scale: 0.7 })
+								.setTween("section.panel.turqoise", {})
 								.setPin("#pinContainer")
+								//.setClassToggle(".greeenn div", "animate__flipInY")
 								.setTween(wipeAnimation)
 								.addIndicators() // add indicators (requires plugin)
 								.addTo(controller);
