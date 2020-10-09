@@ -6,6 +6,10 @@
 
 
 <style>
+  * {
+    box-sizing: border-box;
+  }
+
   html {
     max-width: 100%;
     height: 100vh;
@@ -19,10 +23,6 @@
   }
 
   #hero-lightpass {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     max-width: 100vw;
     max-height: 100vh;
   }
@@ -39,6 +39,20 @@
     align-items: center;
   }
 
+  #animation {
+    height: 100vh;
+  }
+
+  canvas {
+    max-height: 85vh !important;
+  }
+
+  #inicio {
+    background-color: rgb(74, 108, 110);
+    max-width: 100%;
+    max-height: 100vh;
+  }
+
   #fim {
     background-color: cadetblue;
     max-width: 100%;
@@ -53,6 +67,7 @@
   }
 </style>
 
+<div id="inicio"></div>
 
 <div id="animation">
   <canvas id="hero-lightpass"></canvas>
@@ -68,7 +83,7 @@
   canvas.width = 1920;
   canvas.height = 1080;
 
-  const frameCount = 299;
+  const frameCount = 225;
 
   const currentFrame = index => {
     return (`./INFINITE/INFINITE_${(index + 1).toString().padStart(5, '0')}.png`)
@@ -91,8 +106,10 @@
     scrollTrigger: {
       trigger: "#animation",
       scrub: 0.5,
+      start: "top top",
       end: "+=" + (frameCount - 1) * 50,
-      pin: true
+      pin: true,
+      endTrigger: "#otherID",
     },
     onUpdate: render // use animation onUpdate instead of scrollTrigger's onUpdate
   });
@@ -104,3 +121,5 @@
     context.drawImage(images[airpods.frame], 0, 0);
   }
 </script>
+
+<div id="fim"></div>
